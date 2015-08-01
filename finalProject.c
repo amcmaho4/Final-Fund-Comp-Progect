@@ -577,7 +577,7 @@ void calculateBallsDirection(Ball_type *Ball, Person_type *Player){ //changes ba
     float centersDiffX,centersDiffY;
     centersDiffX = Ball -> x - Player -> x;
     centersDiffY = Ball -> y - Player -> y;
-    if( abs( centersDiffX ) < 0.00001 )
+    if( fabsf( centersDiffX ) < 0.00001 )
         centersDiffX = 0.00001;  //dont divide by zero
     slopeBetweenCenters = centersDiffY / centersDiffX ;
     int quadrantHit;

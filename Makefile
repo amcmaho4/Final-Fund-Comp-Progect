@@ -1,13 +1,11 @@
-
 all: final.o gfxModified.o
-	gcc final.o gfxModified.o -lm -lX11 -o runit
-
-final.o: final.c gfxModified.h
-	gcc -c final.c
+	gcc finalProject.o gfxModified.o -lm -lX11 -o all -lX11 -lm -I/opt/X11/include/ -L/opt/X11/lib/
+final.o: finalProject.c gfxModified.h
+	gcc -c finalProject.c
 
 gfxModified.o: gfxModified.c
 	gcc -c gfxModified.c
 
 clean:
-	rm *.o runit
+	rm *.o all
 
